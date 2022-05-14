@@ -1,0 +1,13 @@
+h1, h3, p {
+    color: var(--text-color);
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+p {
+    text-align: justify;
+    width: 80%;
+    margin: auto;
+}

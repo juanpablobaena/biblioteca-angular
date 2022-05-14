@@ -1,0 +1,118 @@
+<p-menubar id="p-menubar" [model]="items">
+    <button pRipple pButton type="button" icon="pi pi-power-off" label="Ingresar" class="p-button-outlined"
+        (click)="iniciarSesion()"></button>
+</p-menubar>
+
+<h1 class="font-bold">Novedades</h1>
+<h3>Nuevos libros</h3>
+
+<p-carousel [value]="books" [numVisible]="3" [numScroll]="3" [circular]="true" [responsiveOptions]="responsiveOptions">
+    <ng-template let-book pTemplate="item">
+        <div class="product-item text-layout">
+            <div class="product-item-content">
+                <div class="mb-3">
+                    <img width="300" height="300" src="../../../assets/img/{{book.archivo}}" [alt]="book.nombre" />
+                </div>
+                <div>
+                    <h4 class="mb-1">{{book.nombre}}</h4>
+                    <h4 class="mt-0 mb-3">{{book.estado}}</h4>
+                    <p-button type="button" styleClass="p-button-success p-button-rounded mr-2" label="Reservar"
+                        icon="pi pi-star"></p-button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<div class="surface-ground px-4 py-8 md:px-6 lg:px-8">
+    <div class="text-900 font-bold text-4xl mb-4 text-center">Nuestros valores</div>
+    <div class="grid">
+        <div class="col-12 lg:col-4" style="width: 50%;">
+            <div class="p-3 h-full">
+                <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
+                    <div class="text-900 font-medium text-xl mb-2">Visión</div>
+                    <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+                    <p>La biblioteca aspira a constituirse en un centro de gestión de información y generación de
+                        conocimiento, en el que se complemente el fondo bibliográfico con el documental, para brindar
+                        información a través de técnicas apropiadas de organización de la información, para su posterior
+                        recuperación por parte de usuarios reales y potenciales.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 lg:col-4" style="width: 50%;">
+            <div class="p-3 h-full">
+                <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
+                    <div class="text-900 font-medium text-xl mb-2">Misión</div>
+                    <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+                    <p>La biblioteca tiene como misión preservar y difundir el patrimonio bibliográfico y documental que
+                        contiene, como fuente de información, para que la comunidad mantenga la identidad cultural,
+                        fortalezca el derecho de participación ciudadana y cultive la memoria colectiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 lg:col-4" style="width: 50%; margin: auto;">
+            <div class="p-3 h-full">
+                <div class="shadow-2 p-3 h-full flex flex-column surface-card" style="border-radius: 6px">
+                    <div class="text-900 font-medium text-xl mb-2">Objetivos</div>
+                    <hr class="my-3 mx-0 border-top-1 border-none surface-border" />
+                    <ul class="text-layout">
+                        <li>Clasificar, catalogar y conservar el fondo bibliográfico y documental legado.</li>
+                        <li>Asesorar y apoyar a los usuarios en la búsqueda de información.</li>
+                        <li>Mejorar el acceso intelectual a la colección, mediante la formación de los usuarios.</li>
+                        <li>Incorporar obras de edición reciente.</li>
+                        <li>Asegurar la continuidad de las suscripciones a las publicaciones periódicas.</li>
+                        <li>Conservar la colección a través de acciones de preservación.</li>
+                        <li>Fomentar la investigación mediante estudio, préstamo y reproducción, acorde a la normativa
+                            vigente.</li>
+                        <li>Difundir la existencia de la Biblioteca, el valor de su patrimonio y los servicios que
+                            ofrece.</li>
+                        <li>Implementar un programa de digitalización de sus obras más importantes.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card flex align-items-center justify-content-center">
+    <div class="w-10 card-container">
+        <div class="text-center p-4 surface-overlay">
+            <h1>Contáctenos</h1>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <div class="p-field">
+                            <h3>¿Qué quieres hacer?</h3>
+                            <p-dropdown [options]="action" optionLabel="name"></p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col">
+                        <div class="p-field">
+                            <h3>Correo electrónico</h3>
+                            <input type="text" pInputText placeholder="Correo">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-field">
+                            <h3>Mensaje</h3>
+                            <textarea [rows]="5" [cols]="30" pInputTextarea></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <button pRipple 
+                        pButton 
+                        type="button"
+                        label="Enviar" 
+                        class="p-button-outlined mt-3">
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
